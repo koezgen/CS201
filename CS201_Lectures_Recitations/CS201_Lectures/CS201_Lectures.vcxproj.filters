@@ -24,5 +24,8 @@
     <ClCompile Include="Week3.cpp">
       <Filter>Kaynak Dosyalar</Filter>
     </ClCompile>
+    <ClCompile Include="Week4.cpp">
+      <Filter>Kaynak Dosyalar</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

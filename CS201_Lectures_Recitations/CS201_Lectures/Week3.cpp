@@ -1,5 +1,7 @@
+/*
 #include <iostream>
 using namespace std;
+*/
 
 //false is zero. If the statement inside the if function is equal to zero, it wll return the false case.
 //boolean output yields 0 or 1 when put in in/out streams.
@@ -105,8 +107,3 @@ int main() {
 */
 
 //functional programming provides a way to modularize the program.
-
-int main() {
-	cout << "Hello";
-	return 0;
-}
