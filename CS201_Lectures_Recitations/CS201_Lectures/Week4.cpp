@@ -1,6 +1,8 @@
+/*
 #include <iostream>
 #include <string>
 using namespace std;
+*/
 
 // do not use global variables as it destroys modularity.
 
