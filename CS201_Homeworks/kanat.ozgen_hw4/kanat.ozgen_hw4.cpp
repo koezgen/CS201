@@ -42,7 +42,7 @@ Film vector_sorter(vector<Film> &unsorted)
 			i = 0;
 		}
 
-		else if (unsorted[i].year == top.year)
+		if (unsorted[i].year == top.year)
 		{
 			if (unsorted[i].name < top.name)
 			{
@@ -51,6 +51,12 @@ Film vector_sorter(vector<Film> &unsorted)
 				unsorted[unsorted.size() - 1] = top;
 				i = 0;
 			}
+		}
+
+		if ((i == unsorted.size() - 1) && (unsorted[0].year == top.year) && (unsorted[0].genre == top.genre) && (unsorted[0].name == top.name))
+		{
+			unsorted[0] = unsorted[unsorted.size() - 1];
+			unsorted[unsorted.size() - 1] = top;
 		}
 	}
 
@@ -62,17 +68,31 @@ int main()
 	RandGen rand;
 	rand.SetSeed(1907);
 	
+	for (int i = 0; i < 7; i++)
+	{
+		cout << rand.RandInt(1, 7);
+	}
+	
 	string raw_FilmDatabase;
 	cout << "Welcome to the movie recommender program!" << endl << endl;
 	cout << "Please enter the movie, year and genre list:" << endl;
 	cin >> raw_FilmDatabase;
 	cout << endl;
+	
+	int film_count = 1;
+	for (int i = 0; i < raw_FilmDatabase.length(); i++)
+	{
+		if (raw_FilmDatabase[i] == '|')
+		{
+			film_count++;
+		}
+	}
 
-	vector<Film> FilmDatabase(10);
+	vector<Film> FilmDatabase(film_count);
 	int film_sep_index = 0;
 	
 	// This creates the data structure
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < film_count; i++)
 	{
 		Film film;
 		string singular_film_data;
@@ -120,10 +140,15 @@ int main()
 
 	vector<Film> SortedFilmDatabase;
 	
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < film_count; i++)
 	{
 		SortedFilmDatabase.push_back(vector_sorter(FilmDatabase));
 		FilmDatabase.pop_back();
+
+		if (FilmDatabase.size() == 3)
+		{
+
+		}
 	}
 
 	while (selection != 4)

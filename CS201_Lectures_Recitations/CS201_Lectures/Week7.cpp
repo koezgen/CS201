@@ -66,7 +66,7 @@ void tree()
 	}
 }
 */
-
+/*
 void box(int height)
 {
 	for (int i = 0; i < height; i++)
@@ -180,3 +180,4 @@ int main()
 
 	return 0;
 }
+*/
